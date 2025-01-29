@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "app"
+version = "0.1.0"
+description = ""
+authors = ["Dilshod <qurbonmurotovd@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+telethon = "^1.38.1"
+environs = "^11.2.1"
+asyncpg = "^0.30.0"
+pytz = "^2024.2"
+django = "^5.1.4"
+psycopg2 = "^2.9.10"
+pillow = "^11.1.0"
+requests = "^2.32.3"
+python-decouple = "^3.8"
+django-modeltranslation = "^0.19.12"
+django-ckeditor = "^6.7.2"
+celery = {extras = ["redis"], version = "^5.4.0"}
+redis = "^5.2.1"
+
+
+[build-system]
+requires = ["poetry-core>=1.4.0"]
+build-backend = "poetry.core.masonry.api"

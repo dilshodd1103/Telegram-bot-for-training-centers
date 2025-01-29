@@ -1,0 +1,31 @@
+services:
+  django:
+    build:
+      context: .
+      dockerfile: infrastructure/docker/Dockerfile
+    container_name: django-app-api
+    image: django_app
+    depends_on:
+      - postgres
+    ports:
+      - "${API_PORT:-8000}:8000"
+    volumes:
+      - .:/var/app
+    env_file:
+      - .env
+    command: >
+      sh /docker-entrypoint.sh python manage.py runserver 0.0.0.0:8000
+
+  postgres:
+    container_name: postgres-db-api
+    image: postgres:latest
+    restart: always
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    env_file:
+      - .env
+    ports:
+      - "${DB_PORT:-5432}:5432"
+
+volumes:
+  postgres-data:
