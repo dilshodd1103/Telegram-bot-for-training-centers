@@ -1,5 +1,6 @@
 # Byte-compiled / optimized / DLL files
-echo "**/__init__.py" >> .gitignore
+__init__.py
+**/__init__.py
 __pycache__/
 *.py[cod]
 *$py.class
